@@ -1,0 +1,25 @@
+{
+  "name": "prog_oop",
+  "version": "1.0.0",
+  "description": "joga_sequelize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinRitsVOCO/prog_oop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinRitsVOCO/prog_oop/issues"
+  },
+  "homepage": "https://github.com/MartinRitsVOCO/prog_oop#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.4",
+    "save": "^2.9.0",
+    "sequelize": "^6.37.7"
+  }
+}
