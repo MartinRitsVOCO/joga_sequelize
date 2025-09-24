@@ -4,7 +4,8 @@
   "description": "joga_sequelize",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,10 @@
     "express": "^5.1.0",
     "mysql2": "^3.14.4",
     "save": "^2.9.0",
-    "sequelize": "^6.37.7"
-  }
+    "sequelize": "^6.37.7",
+    "bcrypt": "^6.0.0",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.2"
+  },
+  "type": "module"
 }
