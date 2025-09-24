@@ -1,14 +1,11 @@
-import { Sequelize } from "sequelize";
-import sequelize from "../utils/db.js";
-
-import Article from "../models/article.js";
-const ArticleModel = Article(sequelize, Sequelize.DataTypes);
-await ArticleModel.sync();
+import loadModels from "../models/index.js";
+const models = await loadModels();
+await models.Article.sync();
 
 class ArticleController {
     async getAll(_req, res) {
         try {
-            const articles = await ArticleModel.findAll();
+            const articles = await models.Article.findAll();
             res.json(articles);
         } catch (error) {
             console.error('Error fetching articles:', error);
@@ -19,7 +16,10 @@ class ArticleController {
     async getBySlug(req, res) {
         const { slug } = req.params;
         try {
-            const article = await ArticleModel.findOne({ where: { slug } });
+            const article = await models.Article.findOne({
+                where: { slug },
+                include: [{ model: models.Author }]
+            });
             if (article) {
                 res.json(article);
             } else {
