@@ -10,6 +10,12 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.Article, { foreignKey:
+        {
+          name: 'AuthorId',
+          field: 'author_id'
+        }
+       });
     }
   }
   Author.init({
