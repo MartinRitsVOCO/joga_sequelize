@@ -18,7 +18,15 @@ class ArticleController {
         try {
             const article = await models.Article.findOne({
                 where: { slug },
-                include: [{ model: models.Author }]
+                include: [
+                    { model: models.Author },
+                    {
+                        model: models.Tag,
+                        through: {
+                            model: models.ArticleTags
+                        }
+                    }
+                ]
             });
             if (article) {
                 res.json(article);

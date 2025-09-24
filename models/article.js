@@ -13,6 +13,7 @@ export default (sequelize, DataTypes) => {
         name: 'AuthorId',
         field: 'author_id'
       }});
+      this.belongsToMany(models.Tag, { through: models.ArticleTags, foreignKey: 'articleId', otherKey: 'tagId' });
     }
   }
   Article.init({

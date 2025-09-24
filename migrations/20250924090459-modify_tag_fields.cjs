@@ -4,13 +4,13 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     return Promise.all([
-      queryInterface.changeColumn('Authors', 'id', {
+      queryInterface.changeColumn('Tags', 'id', {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
       }),
-      queryInterface.changeColumn('Authors', 'name', {
+      queryInterface.changeColumn('Tags', 'name', {
         type: Sequelize.STRING,
         allowNull: false
       })
@@ -19,7 +19,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     return Promise.all([
-      queryInterface.dropTable('Authors')
+      queryInterface.dropTable('Tags')
     ]);
   }
 };
