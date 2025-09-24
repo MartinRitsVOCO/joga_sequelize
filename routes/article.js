@@ -8,5 +8,7 @@ router.get('/', articleController.getAll);
 router.get('/slug/:slug', articleController.getBySlug);
 
 router.post('/admin/add', adminArticleController.create);
+router.delete('/admin/delete/:id', adminArticleController.delete);
+router.put('/admin/update/:id', adminArticleController.update);
 
 export default router;
