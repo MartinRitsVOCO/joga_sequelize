@@ -41,6 +41,6 @@ module.exports = {
   async down (queryInterface, Sequelize) {
     return Promise.all([
       queryInterface.dropTable('Articles')
-    ]);    
+    ]);
   }
 };
